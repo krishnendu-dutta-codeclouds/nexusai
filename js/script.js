@@ -1,9 +1,9 @@
 /* =========================================
-   NEXUS.AI — Advanced GSAP Animations
+   NEXUS.AGENCY — Creative Studio Animations
    ========================================= */
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin, TextPlugin, MotionPathPlugin);
-
+ 
 /* ---------- 1. Custom Cursor ---------- */
 const cursor = document.querySelector('.cursor');
 const follower = document.querySelector('.cursor-follower');
@@ -154,19 +154,43 @@ document.querySelectorAll('.magnetic').forEach(btn => {
 });
 
 /* ---------- 6. Smooth Scroll Nav ---------- */
-document.querySelectorAll('.nav-links a').forEach(link => {
+document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', (e) => {
-    e.preventDefault();
-    const target = document.querySelector(link.getAttribute('href'));
+    const href = link.getAttribute('href');
+    if (!href || href === '#') return;
+
+    const target = document.querySelector(href);
     if (target) {
+      e.preventDefault();
       gsap.to(window, {
         scrollTo: { y: target, offsetY: 80 },
         duration: 1.2,
         ease: 'power3.inOut'
       });
+
+      if (document.body.classList.contains('nav-open')) {
+        document.body.classList.remove('nav-open');
+        document.querySelector('.navbar').classList.remove('open');
+        document.querySelector('.menu-toggle').classList.remove('open');
+      }
     }
   });
 });
+
+const menuToggle = document.querySelector('.menu-toggle');
+const menuClose = document.querySelector('.menu-close');
+const navbar = document.querySelector('.navbar');
+
+if (menuToggle && menuClose && navbar) {
+  const toggleMenu = () => {
+    navbar.classList.toggle('open');
+    menuToggle.classList.toggle('open');
+    document.body.classList.toggle('nav-open');
+  };
+
+  menuToggle.addEventListener('click', toggleMenu);
+  menuClose.addEventListener('click', toggleMenu);
+}
 
 /* ---------- 7. Section title parallax reveal ---------- */
 gsap.utils.toArray('.section-title').forEach(title => {
