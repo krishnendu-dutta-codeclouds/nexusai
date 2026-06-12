@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEXUS AI — Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- GSAP + plugins -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/TextPlugin.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MotionPathPlugin.min.js"></script>
+</head>
+<body>
+  <!-- Custom cursor -->
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+
+  <!-- Neural network background -->
+  <canvas id="neural-canvas"></canvas>
+
+  <!-- Loading screen -->
+  <div class="loader" id="loader">
+    <div class="loader-content">
+      <div class="loader-ring"></div>
+      <div class="loader-text">
+        <span class="loader-line" data-text="INITIALIZING">INITIALIZING</span>
+        <span class="loader-line" data-text="NEXUS.AI">NEXUS.AI</span>
+      </div>
+      <div class="loader-percent" id="loaderPercent">0%</div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="logo">
+      <span class="logo-bracket">[</span>
+      <span class="logo-text">NEXUS</span>
+      <span class="logo-bracket">]</span>
+      <span class="logo-dot">.</span>
+      <span class="logo-accent">AI</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home" data-text="HOME">HOME</a></li>
+      <li><a href="#about" data-text="ABOUT">ABOUT</a></li>
+      <li><a href="#projects" data-text="PROJECTS">PROJECTS</a></li>
+      <li><a href="#skills" data-text="SKILLS">SKILLS</a></li>
+      <li><a href="#contact" data-text="CONTACT">CONTACT</a></li>
+    </ul>
+    <div class="menu-toggle">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero" id="home">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-tag">
+          <span class="tag-dot"></span>
+          <span>SYSTEM ONLINE — v4.7.2</span>
+        </div>
+        <h1 class="hero-title">
+          <span class="title-line"><span class="title-text">Building</span></span>
+          <span class="title-line"><span class="title-text gradient-text">Intelligent</span></span>
+          <span class="title-line"><span class="title-text">Experiences</span></span>
+        </h1>
+        <p class="hero-subtitle">
+          AI Engineer & Creative Developer crafting neural interfaces,
+          generative systems, and self‑learning products.
+        </p>
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary magnetic">
+            <span>Explore Work</span>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+              <path d="M2 10H18M18 10L11 3M18 10L11 17" stroke="currentColor" stroke-width="2"/>
+            </svg>
+          </a>
+          <a href="#contact" class="btn btn-ghost magnetic">
+            <span>Let's Talk</span>
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat">
+            <div class="stat-num" data-target="150">0</div><span class="stat-plus">+</span>
+            <div class="stat-label">AI Models Trained</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" data-target="98">0</div><span class="stat-plus">%</span>
+            <div class="stat-label">Accuracy Rate</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num" data-target="42">0</div><span class="stat-plus">+</span>
+            <div class="stat-label">Global Clients</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="orb-wrap">
+          <div class="orb"></div>
+          <div class="orb-ring orb-ring-1"></div>
+          <div class="orb-ring orb-ring-2"></div>
+          <div class="orb-ring orb-ring-3"></div>
+          <div class="orb-core"></div>
+          <div class="orbit-tag orbit-tag-1">LLM</div>
+          <div class="orbit-tag orbit-tag-2">CNN</div>
+          <div class="orbit-tag orbit-tag-3">GAN</div>
+          <div class="orbit-tag orbit-tag-4">RNN</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="scroll-indicator">
+      <span>SCROLL</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>MACHINE LEARNING</span><span>✦</span>
+      <span>COMPUTER VISION</span><span>✦</span>
+      <span>NLP</span><span>✦</span>
+      <span>GENERATIVE AI</span><span>✦</span>
+      <span>DEEP LEARNING</span><span>✦</span>
+      <span>REINFORCEMENT LEARNING</span><span>✦</span>
+      <span>NEURAL NETWORKS</span><span>✦</span>
+      <span>MLOPS</span><span>✦</span>
+      <span>MACHINE LEARNING</span><span>✦</span>
+      <span>COMPUTER VISION</span><span>✦</span>
+      <span>NLP</span><span>✦</span>
+      <span>GENERATIVE AI</span><span>✦</span>
+      <span>DEEP LEARNING</span><span>✦</span>
+      <span>REINFORCEMENT LEARNING</span><span>✦</span>
+      <span>NEURAL NETWORKS</span><span>✦</span>
+      <span>MLOPS</span><span>✦</span>
+    </div>
+  </div>
+
+  <!-- About -->
+  <section class="about" id="about">
+    <div class="section-head">
+      <span class="section-num">01</span>
+      <h2 class="section-title">About<span class="dot">.</span></h2>
+      <p class="section-sub">The mind behind the machine</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="reveal-text">
+          I'm <span class="hl">Aria Chen</span> — an AI engineer and creative developer obsessed
+          with the intersection of <span class="hl">intelligence</span> and <span class="hl">design</span>.
+        </p>
+        <p class="reveal-text">
+          For the past 6 years I've been building self‑learning systems, neural interfaces and
+          generative pipelines that turn raw data into products people actually love.
+        </p>
+        <p class="reveal-text">
+          My work spans transformer architectures, real‑time computer vision, and
+          brand‑level AI experiences shipped to <span class="hl">millions</span> of users.
+        </p>
+        <div class="about-tags">
+          <span class="chip">Python</span>
+          <span class="chip">PyTorch</span>
+          <span class="chip">TensorFlow</span>
+          <span class="chip">LangChain</span>
+          <span class="chip">Vector DBs</span>
+          <span class="chip">CUDA</span>
+        </div>
+      </div>
+
+      <div class="about-card">
+        <div class="card-inner">
+          <div class="card-glow"></div>
+          <div class="card-header">
+            <div class="card-avatar">
+              <div class="avatar-grid"></div>
+              <span class="avatar-status"></span>
+            </div>
+            <div>
+              <div class="card-name">Aria Chen</div>
+              <div class="card-role">Principal AI Engineer</div>
+            </div>
+          </div>
+          <div class="card-bars">
+            <div class="bar"><span>Neural Architecture</span><i style="--w:95%"></i></div>
+            <div class="bar"><span>Generative Systems</span><i style="--w:92%"></i></div>
+            <div class="bar"><span>MLOps & Scale</span><i style="--w:88%"></i></div>
+            <div class="bar"><span>Creative Coding</span><i style="--w:97%"></i></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section class="projects" id="projects">
+    <div class="section-head">
+      <span class="section-num">02</span>
+      <h2 class="section-title">Projects<span class="dot">.</span></h2>
+      <p class="section-sub">Selected neural experiments</p>
+    </div>
+
+    <div class="project-list">
+      <article class="project" data-color="#00ffd5">
+        <div class="project-num">01</div>
+        <div class="project-content">
+          <h3>Helios — Generative Design Engine</h3>
+          <p>Real‑time diffusion‑based visual generation for branding teams. Reduces design cycles by 80%.</p>
+          <div class="project-tags"><span>Stable Diffusion</span><span>ComfyUI</span><span>React</span></div>
+        </div>
+        <div class="project-arrow">→</div>
+      </article>
+
+      <article class="project" data-color="#a78bfa">
+        <div class="project-num">02</div>
+        <div class="project-content">
+          <h3>Sentinel — Vision Threat Detection</h3>
+          <p>Edge CNN pipeline running at 120fps for real‑time safety monitoring in industrial environments.</p>
+          <div class="project-tags"><span>YOLOv9</span><span>TensorRT</span><span>CUDA</span></div>
+        </div>
+        <div class="project-arrow">→</div>
+      </article>
+
+      <article class="project" data-color="#ff5e9c">
+        <div class="project-num">03</div>
+        <div class="project-content">
+          <h3>Oracle — Conversational Knowledge OS</h3>
+          <p>RAG platform connecting 50M+ documents with sub‑200ms latency. Multi‑modal, multi‑tenant.</p>
+          <div class="project-tags"><span>LangChain</span><span>Pinecone</span><span>GPT‑4o</span></div>
+        </div>
+        <div class="project-arrow">→</div>
+      </article>
+
+      <article class="project" data-color="#ffd166">
+        <div class="project-num">04</div>
+        <div class="project-content">
+          <h3>Echo — Voice Synthesis Studio</h3>
+          <p>Zero‑shot voice cloning platform powering 12M minutes of audio monthly for creators worldwide.</p>
+          <div class="project-tags"><span>TTS</span><span>Whisper</span><span>FastAPI</span></div>
+        </div>
+        <div class="project-arrow">→</div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section class="skills" id="skills">
+    <div class="section-head">
+      <span class="section-num">03</span>
+      <h2 class="section-title">Stack<span class="dot">.</span></h2>
+      <p class="section-sub">Tools of the trade</p>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-card" data-tilt>
+        <div class="skill-icon">🧠</div>
+        <h4>AI / ML</h4>
+        <p>PyTorch, JAX, HuggingFace, LangChain, LlamaIndex</p>
+      </div>
+      <div class="skill-card" data-tilt>
+        <div class="skill-icon">⚙️</div>
+        <h4>Engineering</h4>
+        <p>Python, Rust, Go, FastAPI, Docker, K8s</p>
+      </div>
+      <div class="skill-card" data-tilt>
+        <div class="skill-icon">🎨</div>
+        <h4>Creative</h4>
+        <p>GSAP, Three.js, WebGL, TouchDesigner</p>
+      </div>
+      <div class="skill-card" data-tilt>
+        <div class="skill-icon">☁️</div>
+        <h4>Cloud</h4>
+        <p>AWS, GCP, Azure, Vercel, Modal, RunPod</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <div class="section-head center">
+      <span class="section-num">04</span>
+      <h2 class="section-title">Let's Build<span class="dot">.</span></h2>
+      <p class="section-sub">Open for collaborations & speaking</p>
+    </div>
+
+    <form class="contact-form" id="contactForm">
+      <div class="field">
+        <input type="text" required id="name" />
+        <label for="name">Your Name</label>
+        <span class="field-line"></span>
+      </div>
+      <div class="field">
+        <input type="email" required id="email" />
+        <label for="email">Email</label>
+        <span class="field-line"></span>
+      </div>
+      <div class="field full">
+        <textarea required id="msg" rows="4"></textarea>
+        <label for="msg">Project Brief</label>
+        <span class="field-line"></span>
+      </div>
+      <button type="submit" class="btn btn-primary magnetic submit-btn">
+        <span>Transmit</span>
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="M2 10H18M18 10L11 3M18 10L11 17" stroke="currentColor" stroke-width="2"/>
+        </svg>
+      </button>
+    </form>
+  </section>
+
+  <footer class="footer">
+    <div>© 2026 NEXUS.AI — All systems nominal</div>
+    <div class="socials">
+      <a href="#">GH</a><a href="#">LI</a><a href="#">TW</a><a href="#">DB</a>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
